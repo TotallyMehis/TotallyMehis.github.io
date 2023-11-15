@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include "global_head.njk" %}
+    <link href="/assets/blog.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="post-head pt-3 mb-5">
+        <h1>{{ title }}</h1>
+        <p id="post-timestamp">{{ date.toISOString().substring(0, 10) }}</p>
+      </div>
+      <div class="post-content">
+        {{ content | safe }}
+      </div>
+      <footer></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        --bs-body-color: #f1f1f1;
+        --bs-body-bg: #121212;
+        --bs-code-color: #ff3a9c;
+
+        background: linear-gradient(-45deg,#00002f, #000 20%, #000 80%, #00002f);
+    }
+}
+
+a {
+    transition: color 0.25s;
+}
+
+@import '~bootstrap/scss/bootstrap';

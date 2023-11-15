@@ -1,0 +1,20 @@
+@import '~prismjs/themes/prism-okaidia';
+
+.container {
+    max-width: 800px !important;
+}
+
+.post-content h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+body {
+    min-height: 100vh;
+}
+
+footer {
+    padding-top: 200px;
+    padding-bottom: 1rem;
+    font-size: 8pt;
+}

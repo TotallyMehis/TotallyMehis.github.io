@@ -1,0 +1,36 @@
+.front-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.front {
+    display: block;
+    margin: 0 1rem;
+    width: fit-content;
+}
+
+.front-text {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+ul {
+    padding-left: 0.9rem !important;
+
+    max-height: 50vh;
+    overflow: scroll;
+}
+
+.cv {
+    vertical-align: middle;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background: linear-gradient(-45deg,#ffea8f, #d694c0);
+    }
+}
