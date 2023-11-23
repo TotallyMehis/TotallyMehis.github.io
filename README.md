@@ -18,6 +18,6 @@ npm run dev
 ## Production build
 
 ```bash
-# Output in _site-folder.
+# Output in _site-folder
 npm run build
 ```
