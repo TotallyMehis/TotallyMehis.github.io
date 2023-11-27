@@ -3,8 +3,9 @@
         --bs-body-color: #f1f1f1;
         --bs-body-bg: #121212;
         --bs-code-color: #ff3a9c;
+        --bg-highlight-blue: #12122f;
 
-        background: linear-gradient(-45deg,#00002f, #000 20%, #000 80%, #00002f);
+        background: linear-gradient(-45deg,var(--bg-highlight-blue), var(--bs-body-bg) 20%, var(--bs-body-bg) 80%, var(--bg-highlight-blue));
     }
 }
 
