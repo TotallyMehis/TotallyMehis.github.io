@@ -1,0 +1,4 @@
+Sitemap: https://mehis.dev/sitemap.xml
+
+User-agent: *
+Disallow:

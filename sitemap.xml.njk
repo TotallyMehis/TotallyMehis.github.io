@@ -1,0 +1,18 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mehis.dev/</loc>
+    <lastmod>2023-11-23</lastmod>
+    <priority>1.0</priority>
+  </url>
+  {%- for post in collections.post | reverse %}
+    <url>
+      <loc>https://mehis.dev{{ post.url }}</loc>
+      <lastmod>{{ post.date.toISOString().substring(0, 10) }}</lastmod>
+    </url>
+  {%- endfor %}
+</urlset>

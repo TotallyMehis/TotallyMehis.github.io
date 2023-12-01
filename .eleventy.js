@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ 'misc/CNAME': 'CNAME' })
   eleventyConfig.addPassthroughCopy({ 'misc/.nojekyll': '.nojekyll' })
+  eleventyConfig.addPassthroughCopy({ 'misc/robots.txt': 'robots.txt' })
 
   eleventyConfig.addPlugin(syntaxHighlight)
 
