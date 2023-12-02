@@ -1,13 +1,14 @@
 ---
 title: "Finding a bug in core string matching function... 10 years later"
 date: 2023-11-23
+edited: 2023-12-02
 ---
 
 A <a href="https://github.com/ValveSoftware/source-sdk-2013/blob/0d8dceea4310fde5706b3ce1c70609d72a38efdf/sp/src/game/server/baseentity.cpp#L2972" target="_blank">core string matching function</a> that is used by Source engine's map logic system has been broken for at least 10 years. Source engine is used by many games, just one of those games <a href="https://main.fastdl.me/maps/" target="_blank">has over fifty thousand custom maps</a>. Yet, nobody has noticed this bug.
 
 ## The broken code
 
-The code checks whether an entity name matches an query string. The query string is usually another entity name, but can end in a wildcard (*). Strings contain ASCII characters and the comparison is case insentitive. Check out the Github link above if you want the whole function. Here's the broken part:
+The code checks whether an entity name matches a query string. The query string is usually another entity name, but can end in a wildcard (*). Strings contain ASCII characters and the comparison is case insentitive. Here's the broken part:
 
 ```cpp
 // ...
