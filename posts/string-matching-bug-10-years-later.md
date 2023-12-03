@@ -1,7 +1,7 @@
 ---
 title: "Finding a bug in core string matching function... 10 years later"
 date: 2023-11-23
-edited: 2023-12-02
+edited: 2023-12-03
 ---
 
 A <a href="https://github.com/ValveSoftware/source-sdk-2013/blob/0d8dceea4310fde5706b3ce1c70609d72a38efdf/sp/src/game/server/baseentity.cpp#L2972" target="_blank">core string matching function</a> that is used by Source engine's map logic system has been broken for at least 10 years. Source engine is used by many games, just one of those games <a href="https://main.fastdl.me/maps/" target="_blank">has over fifty thousand custom maps</a>. Yet, nobody has noticed this bug.
@@ -79,7 +79,7 @@ But wait, there's more! Comparisons also casts the `char` and `unsigned char` to
 
 ## Why didn't anybody notice?
 
-1. Only uppercase letters and numbers can be matched incorrectly. (`P = 0, Q = 1, R = 2, S = 3, T = 4, U = 5, V = 6, W = 7, X = 8, Y = 9`)
+1. Only uppercase letters, numbers and symbols can be matched incorrectly.
 2. The strings have to be the same size (unless performing a wildcard query).
 3. The strings have to have the buggy characters in the same position.
 
@@ -125,7 +125,7 @@ Now that we know all that, we can finally fix the code. There is only one way to
 <a href="https://github.com/ValveSoftware/source-sdk-2013/pull/498" target="_blank">I created a fix pull request in 2020</a> when I first discovered this, but back then I didn't quite understand the entire picture, so I ended up casting all of the `char` operations. 😅
 
 
-[Test it yourself with this code.](https://gist.github.com/TotallyMehis/13fc9215595ff342309024c628d7520e)
+<a href="https://gist.github.com/TotallyMehis/13fc9215595ff342309024c628d7520e" target="_blank">Test it yourself with this code.</a>
 
 ---
 
