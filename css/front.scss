@@ -23,10 +23,13 @@ ul {
     overflow: scroll;
 }
 
-.cv {
-    vertical-align: middle;
-    font-size: 2rem;
+.col a {
+    display: block;
     text-decoration: none;
+}
+
+.col a svg {
+    margin-bottom: 1rem;
 }
 
 @media (prefers-color-scheme: light) {

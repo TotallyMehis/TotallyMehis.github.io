@@ -1,0 +1,127 @@
+{
+  "featured": [
+    {
+      "name": "kz_bhop_aamu3",
+      "year": "2023"
+    },
+    {
+      "name": "zm_ethos",
+      "year": "2017"
+    },
+    {
+      "name": "bhop_fly_saudade",
+      "year": "2017"
+    },
+    {
+      "name": "bhop_aamu2",
+      "year": "2016"
+    },
+    {
+      "name": "bhop_aamu",
+      "year": "2015"
+    }
+  ],
+  "crap": [
+    {
+      "name": "zm_puzzle_deathrun",
+      "year": "2023",
+      "description": "A deathrun map that attempts to be fair."
+    },
+    {
+      "name": "id_mehis",
+      "year": "2021",
+      "description": "Identity cup tournament map, A.K.A. australian ice."
+    },
+    {
+      "name": "christmasrace",
+      "year": "2021"
+    },
+    {
+      "name": "mehisjourney01",
+      "year": "2021",
+      "description": "Longer and more difficult jump map."
+    },
+    {
+      "name": "zm_box_fortress",
+      "year": "2021",
+      "description": "Survivors must defend their base using, you guessed it, boxes."
+    },
+    {
+      "name": "comm6_mehis",
+      "year": "2020"
+    },
+    {
+      "name": "mehisjumps02",
+      "year": "2020"
+    },
+    {
+      "name": "cc_mehis",
+      "year": "2020",
+      "description": "Corona cup tournament map"
+    },
+    {
+      "name": "mehisjumps01",
+      "year": "2020",
+      "description": "I tried this time."
+    },
+    {
+      "name": "comm5_mehis",
+      "year": "2020",
+      "description": "Rough first map for a community project in Quake 2 jump mod."
+    },
+    {
+      "name": "zmr_deathball",
+      "year": "2019",
+      "description": "ZM and the survivors are pitted against each other in a football match. Re-imagining of a classic ZM map, zm_deathball."
+    },
+    {
+      "name": "zm_dm_sabreduel",
+      "year": "2016",
+      "description": "The survivors must fight each other with lightsabers. Only one shall survive. Remake of the original zmdm_sabreduel."
+    },
+    {
+      "name": "zm_box_master",
+      "year": "?",
+      "description": "Survivors are split into teams and they must climb to the top using boxes before the water catches up to them or another team gets there first."
+    },
+    {
+      "name": "zm_explosion",
+      "year": "?",
+      "description": "Survivors are tasked with stopping an evil computer. Contains a bunch of difficult jumping puzzles."
+    },
+    {
+      "name": "zm_cityflood",
+      "year": "?",
+      "description": "The survivors must find a way to the top of a tall building and escape via helicopter. My first map. 🥲"
+    }
+  ],
+  "collaborations": [
+    {
+      "name": "bhop_sj",
+      "year": "2018",
+      "description": "Collaboration with other SourceJump mappers."
+    },
+    {
+      "name": "bhop_uncolored",
+      "year": "2015",
+      "description": "Co-authored with Yeckoh. Technically just a port from the ZM version."
+    }
+  ],
+  "ports": [
+    {
+      "name": "zmr_lake",
+      "year": "2020",
+      "description": "Port of zm_lake to ZMR."
+    },
+    {
+      "name": "zmr_grind",
+      "year": "2020",
+      "description": "Port of zm_grind to ZMR."
+    },
+    {
+      "name": "cs_crackhouse_og",
+      "year": "2019",
+      "description": "Port of CSS version of cs_crackhouse to CS:GO."
+    }
+  ]
+}

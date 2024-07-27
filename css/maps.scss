@@ -1,0 +1,69 @@
+:root {
+    --featured-size: 600px;
+    --crap-size: 400px;
+}
+
+.main-container {
+    padding-inline: 1rem;
+    max-width: 2000px;
+    margin-inline: auto;
+    padding-bottom: 300px;
+}
+
+.maps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+}
+
+.maps-list .map {
+    margin-inline: auto;
+    margin-bottom: 2rem;
+}
+
+.maps-group {
+    margin-block: 10rem;
+}
+
+.featured .map {
+    width: var(--featured-size);
+}
+
+.featured .map img {
+    width: var(--featured-size);
+}
+
+.map {
+    width: var(--crap-size);
+    max-width: 100%;
+}
+
+.map img {
+    width: var(--crap-size);
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+}
+
+.map .info {
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.map .info .map-name {
+    font-size: 1.25rem;
+}
+
+.map .info .year {
+    font-size: 1.1rem;
+}
+
+.map .description {
+    text-overflow: ellipsis ellipsis;
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}

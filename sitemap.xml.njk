@@ -5,13 +5,20 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mehis.dev/</loc>
+    <loc>{{ global.full_url }}/</loc>
     <lastmod>2023-11-23</lastmod>
     <priority>1.0</priority>
   </url>
+  {%- for maps in collections.maps | reverse %}
+    <url>
+      <loc>{{ global.full_url }}{{ maps.url }}</loc>
+      <lastmod>{{ maps.date.toISOString().substring(0, 10) }}</lastmod>
+      <priority>0.75</priority>
+    </url>
+  {%- endfor %}
   {%- for post in collections.post | reverse %}
     <url>
-      <loc>https://mehis.dev{{ post.url }}</loc>
+      <loc>{{ global.full_url }}{{ post.url }}</loc>
       <lastmod>{{ post.date.toISOString().substring(0, 10) }}</lastmod>
     </url>
   {%- endfor %}

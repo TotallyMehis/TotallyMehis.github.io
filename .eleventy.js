@@ -3,6 +3,7 @@ const esbuild = require('esbuild')
 const { sassPlugin } = require('esbuild-sass-plugin')
 const htmlMinifier = require('html-minifier')
 const { PurgeCSS } = require('purgecss')
+const { transformMapImages } = require('./map')
 const fs = require('fs').promises
 
 
@@ -19,10 +20,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'misc/CNAME': 'CNAME' })
   eleventyConfig.addPassthroughCopy({ 'misc/.nojekyll': '.nojekyll' })
   eleventyConfig.addPassthroughCopy({ 'misc/robots.txt': 'robots.txt' })
+  eleventyConfig.addPassthroughCopy({ 'map_images/*.avif': 'maps/' })
 
   eleventyConfig.addPlugin(syntaxHighlight)
 
   eleventyConfig.addWatchTarget('./css/')
+  eleventyConfig.addWatchTarget('./map_images/')
 
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (outputPath.endsWith('.html')) {
@@ -39,7 +42,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.on('afterBuild', async () => {
     await esbuild.build({
-      entryPoints: ['css/main.scss', 'css/blog.scss', 'css/front.scss'],
+      entryPoints: ['css/main.scss', 'css/blog.scss', 'css/front.scss', 'css/maps.scss'],
       outdir: '_site/assets',
       minify: !isDevelopment,
       sourcemap: isDevelopment,
@@ -55,5 +58,8 @@ module.exports = function (eleventyConfig) {
         fs.writeFile(res.file, res.css)
       }))
     }
+
+
+    await transformMapImages()
   })
 }

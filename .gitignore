@@ -1,3 +1,6 @@
 node_modules
 _site
 posts_wip/
+map_images/*.jpg
+map_images/*.png
+map_images/*.tga

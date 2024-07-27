@@ -1,0 +1,84 @@
+---
+title: Maps
+tags: maps
+date: 2024-07-27
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "global_head.njk" %}
+    <link href="/assets/maps.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="maps-group featured">
+        <div class="maps featured">
+          {%- for map in featured -%}
+            <div class="map">
+              <div class="image">
+                <img src="{{ (map.images | first).thumb }}"/>
+              </div>
+              <div class="info">
+                <div class="map-name">{{ map.name }}</div>
+                <div class="year text-secondary">{{ map.year }}</div>
+              </div>
+              <div class="description text-secondary">{{ map.description }}</div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="maps-group">
+        <div class="maps crap">
+          {%- for map in crap -%}
+            <div class="map">
+              <div class="image">
+                <img src="{{ (map.images | first).thumb }}"/>
+              </div>
+              <div class="info">
+                <div class="map-name">{{ map.name }}</div>
+                <div class="year text-secondary">{{ map.year }}</div>
+              </div>
+              <div class="description text-secondary">{{ map.description }}</div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="maps-group">
+        <h2>Collaborations</h2>
+        <div class="maps">
+          {%- for map in collaborations -%}
+            <div class="map">
+              <div class="image">
+                <img src="{{ (map.images | first).thumb }}"/>
+              </div>
+              <div class="info">
+                <div class="map-name">{{ map.name }}</div>
+                <div class="year text-secondary">{{ map.year }}</div>
+              </div>
+              <div class="description text-secondary">{{ map.description }}</div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="maps-group">
+        <h2>Ports</h2>
+        <div class="maps-list">
+          {%- for map in ports -%}
+            <div class="map">
+              <div>
+                <div class="info">
+                  <div class="map-name">{{ map.name }}</div>
+                  <div class="year text-secondary">{{ map.year }}</div>
+                </div>
+                <div class="description text-secondary">{{ map.description }}</div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
