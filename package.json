@@ -25,9 +25,7 @@
     "esbuild-sass-plugin": "^2.16.0",
     "html-minifier": "^4.0.0",
     "prismjs": "^1.29.0",
-    "purgecss": "^5.0.0"
-  },
-  "dependencies": {
+    "purgecss": "^5.0.0",
     "sharp": "^0.33.4"
   }
 }
