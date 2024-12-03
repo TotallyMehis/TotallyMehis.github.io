@@ -1,3 +1,5 @@
+@use '~bootstrap/scss/bootstrap';
+
 @media (prefers-color-scheme: dark) {
     body {
         --bs-body-color: #f1f1f1;
@@ -14,5 +16,3 @@
 a {
     transition: color 0.25s;
 }
-
-@import '~bootstrap/scss/bootstrap';
