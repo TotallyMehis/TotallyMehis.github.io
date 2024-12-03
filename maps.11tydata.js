@@ -1,5 +1,4 @@
-const fs = require('fs').promises
-const { listMapImageFiles, getMaps } = require('./map')
+import { listMapImageFiles, getMaps } from './map.js'
 
 
 
@@ -58,4 +57,4 @@ async function readMaps() {
   return maps
 }
 
-module.exports = readMaps()
+export default readMaps()

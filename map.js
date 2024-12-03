@@ -1,6 +1,6 @@
-const fs = require('fs').promises
-const sharp = require('sharp')
-const path = require('path')
+import { promises as fs } from 'fs'
+import sharp from 'sharp'
+import path from 'path'
 
 /**
  * @typedef MapsFile
@@ -27,7 +27,7 @@ const path = require('path')
  * @property {string} thumb
  */
 
-async function listMapImageFiles() {
+export async function listMapImageFiles() {
   try {
     const files = await fs.readdir('map_images')
     return files.filter(mapname => mapname.endsWith('.avif'))
@@ -37,7 +37,7 @@ async function listMapImageFiles() {
   }
 }
 
-async function getMaps() {
+export async function getMaps() {
   /** @type {MapsFile} */
   let maps
 
@@ -52,7 +52,7 @@ async function getMaps() {
   return maps
 }
 
-async function transformMapImages() {
+export async function transformMapImages() {
   console.log('Transforming images to thumbnails...')
   const mapImageFiles = await listMapImageFiles()
 
@@ -79,11 +79,4 @@ async function transformMapImages() {
   }))
 
   console.log('Transformation done!')
-}
-
-
-module.exports = {
-  listMapImageFiles,
-  getMaps,
-  transformMapImages
 }

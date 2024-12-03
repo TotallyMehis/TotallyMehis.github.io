@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --serve"
@@ -25,7 +26,7 @@
     "esbuild-sass-plugin": "^2.16.0",
     "html-minifier": "^4.0.0",
     "prismjs": "^1.29.0",
-    "purgecss": "^5.0.0",
+    "purgecss": "^7.0.0",
     "sharp": "^0.33.4"
   }
 }

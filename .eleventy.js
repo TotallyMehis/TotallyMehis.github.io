@@ -1,16 +1,16 @@
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const esbuild = require('esbuild')
-const { sassPlugin } = require('esbuild-sass-plugin')
-const htmlMinifier = require('html-minifier')
-const { PurgeCSS } = require('purgecss')
-const { transformMapImages } = require('./map')
-const fs = require('fs').promises
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import esbuild from 'esbuild'
+import { sassPlugin } from 'esbuild-sass-plugin'
+import { minify } from 'html-minifier'
+import { PurgeCSS } from 'purgecss'
+import { transformMapImages } from './map.js'
+import { promises as fs } from 'fs'
 
 
 /**
  * @param {import('@11ty/eleventy').UserConfig} eleventyConfig 
  */
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   const isDevelopment = false // process.env.ELEVENTY_RUN_MODE !== 'build'
 
   if (!isDevelopment) {
@@ -29,7 +29,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (outputPath.endsWith('.html')) {
-      return htmlMinifier.minify(content, {
+      return minify(content, {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,
         removeComments: true,
@@ -52,7 +52,11 @@ module.exports = function (eleventyConfig) {
     if (!isDevelopment) {
       console.log('Purging CSS...')
 
-      const purgeResult = await new PurgeCSS().purge()
+      const purgeResult = await new PurgeCSS().purge({
+        content: ['_site/**/*.html'],
+        css: ['_site/**/*.css'],
+        variables: true
+      })
       await Promise.all(purgeResult.map(res => {
         console.log('Overwriting purged file', res.file)
         fs.writeFile(res.file, res.css)
